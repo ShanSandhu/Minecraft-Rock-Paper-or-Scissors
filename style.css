@@ -1,0 +1,25 @@
+body {
+    background-color: #926c4d;
+    margin: 0;
+}
+
+.container-top {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #637f40;
+    border: 8px solid #526935;
+    align-items: center;
+    justify-content: center;
+}
+
+.rps-title {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+
+
+/* use this hex for boxes outline : #5b3e31 */
