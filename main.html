@@ -21,15 +21,18 @@
         <div class="title-wrapper">
             <div class= "rps-title">Rock Paper Scissors</div>
         </div>
-            <div class = "music">
-            <audio autoplay loop src="Sweden.mp3">
-                This bowser does not wupport HTML5 audio
-            </div>
             <div class = "settings">
                 <button>
                     <img src="icons/settings-icon-2048x2046-cw28eevx-1.png (1).png" alt="Settings">
                 </button>
+                <div class = "drop-down">
+                    <label for="volume">
+                        <img src="icons/unmute.button.png">
+                    </label>
+                    <input type="range" id="volume" name="volume" min="0" max="1" step="0.1">
+                </div>
             </div>
         </div>
+        <audio id="background-audio" autoplay loop src="music/C418 - Haggstrom - Minecraft Volume Alpha.mp3"></audio>
 </body>
 </html>

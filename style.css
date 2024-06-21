@@ -48,4 +48,22 @@ body {
     display: block;
 }
 
+.drop-down {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #637f40;
+    border: 8px solid #526935;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.settings:hover .drop-down{
+    display: block;
+}
+
+
 /* use this hex for boxes outline : #5b3e31 */
