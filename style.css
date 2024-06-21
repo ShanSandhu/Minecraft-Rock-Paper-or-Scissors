@@ -10,6 +10,14 @@ body {
     background-color: #637f40;
     border: 8px solid #526935;
     align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.title-wrapper {
+    flex: 1;
+    display: flex;
     justify-content: center;
 }
 
@@ -18,8 +26,26 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
+    text-align: center;
 }
 
+.settings {
+    display: flex;
+    gap: 50px;
+}
 
+.settings button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.settings button img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
 
 /* use this hex for boxes outline : #5b3e31 */
