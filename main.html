@@ -11,48 +11,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class = "music">
-    <audio autoplay loop src="Sweden.mp3">
-    This bowser does not wupport HTML5 audio
-    </div>
-
-    </audio>
-    <div class = "container-top">
+    <div class="container-top">
         <div class="title-wrapper">
-            <div class= "rps-title">Rock Paper Scissors</div>
+            <div class="rps-title">Rock Paper Scissors</div>
         </div>
-            <div class = "settings">
-                <button>
-                    <img src="icons/settings-icon-2048x2046-cw28eevx-1.png (1).png" alt="Settings">
-                </button>
-                <div class = "drop-down">
-                    <label for="volume">
-                        <img src="icons/unmute.button.png">
-                    </label>
-                    <input type="range" id="volume" name="volume" min="0" max="1" step="0.1">
-                </div>
+        <div class="settings">
+            <button>
+                <img src="icons/settings-icon-2048x2046-cw28eevx-1.png (1).png" alt="Settings">
+            </button>
+            <div class="drop-down">
+                <label for="volume">
+                    <img src="icons/unmute.button.png">
+                </label>
+                <input type="range" id="volume" name="volume" min="0" max="1" step="0.1">
             </div>
         </div>
-        <audio id="background-audio" autoplay loop src="music/C418 - Haggstrom - Minecraft Volume Alpha.mp3"></audio>
-    <div class = "rps-p">
-        <div class = "rock-p">
-        <button>
-            <img src = icons/rocks.png.png>
-        </button>
-        </div>
-        <div class = "paper-p">
-        <button>
-            <img src = "icons/paper.png">
-        </button>
-        </div>
-        <div class = "scissors-p">
-        <button>
-            <img src = "icons/final.scissors.png">
-        </button>
-        </div>
     </div>
-    <div class = "rps-cpu">
-
+    <audio id="background-audio" autoplay loop src="music/C418 - Haggstrom - Minecraft Volume Alpha.mp3"></audio>
+    <div class="left-right-container">
+        <div class="rps-p">
+            <div class="rock-p">
+                <button>
+                    <img src="icons/rocks.png.png" alt="Rock">
+                </button>
+            </div>
+            <div class="paper-p">
+                <button>
+                    <img src="icons/paper.png" alt="Paper">
+                </button>
+            </div>
+            <div class="scissors-p">
+                <button>
+                    <img src="icons/final.scissors.png" alt="Scissors">
+                </button>
+            </div>
+        </div>
+        <div class="rps-cpu">
+            <div class="steve">
+                <img src="icons/steve.2.png" alt="Steve">
+            </div>
+        </div>
     </div>
 </body>
 </html>
