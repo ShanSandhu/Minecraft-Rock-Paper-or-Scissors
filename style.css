@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #926c4d;
 }
 
 .container-top {
@@ -69,8 +70,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    background-color: #926c4d;
-    border: 8px solid #765341;
+    flex-wrap: wrap;
 }
 
 .rps-p {
@@ -143,6 +143,11 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
+    position: relative;
+}
+
+.steve {
+    width: 450px;
 }
 
 .steve img {
@@ -150,5 +155,142 @@ body {
 
 }
 
+
+.p-choice, .cpu-choice {
+    width: 225px;
+    height: 225px;
+    background-color: #808080;
+    border: 8px solid #bfbfbf;
+    margin: 20px;
+}
+
+.paper-p-container {
+    display: flex;
+    align-items: center;
+}
+
+.p-choice {
+    margin-left: 20px;
+}
+
+.cpu-choice {
+    position: absolute;
+    top: 130.8px;
+    left: -120px;
+    
+}
+
+
+.sign {
+    width: 450px;
+    height: 200px;
+    background-color: #c69b6f;
+    border: 8px solid #765341;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: "Tiny5", sans-serif;
+    font-size: 150px;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+
+}
+
+.health-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #637f40;
+    border: 8px solid #526935;
+    text-align: center;
+    gap: 1500px;
+    flex-shrink: 1;
+}
+
+.heart-left, .info, .heart-right {
+    display: flex;
+}
+
+.heart-left img{
+    width: 200px;
+    height: 200px;
+    flex-direction: row;
+}
+
+.heart-right img{
+    width: 200px;
+    height: 200px;
+    flex-direction: row;
+}
+
+.info {
+    position: absolute;
+    top: 1000px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Tiny5", sans-serif;
+    font-size: 30px; /* Adjust size as needed */
+    color: black;
+    text-align: center;
+}
+
+.info2 {
+    position: absolute;
+    top: 1100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Tiny5", sans-serif;
+    font-size: 30px; /* Adjust size as needed */
+    color: black;
+    text-align: center;
+}
+
+.info3 {
+    position: absolute;
+    top: 1050px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Tiny5", sans-serif;
+    font-size: 30px; /* Adjust size as needed */
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .rps-title {
+        font-size: 1.5rem;
+    }
+
+    .sign {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    .rock-p, .paper-p, .scissors-p, .p-choice, .cpu-choice {
+        width: 100px;
+        height: 100px;
+    }
+
+    .settings button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .health-container {
+        padding: 10px;
+    }
+
+    .heart-left img, .heart-right img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info, .info2, .info3 {
+        font-size: 0.8rem;
+    }
+}
 /* use this hex for boxes outline : #5b3e31 */
 /* make pngs 200 x 200 */
+/* 150 px is ideal for hearts */
