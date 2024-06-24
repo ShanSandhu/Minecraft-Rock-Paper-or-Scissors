@@ -11,62 +11,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container-top">
-        <div class="title-wrapper">
-            <div class="rps-title">Rock Paper Scissors</div>
-        </div>
-        <div class="settings">
-            <button>
-                <img src="icons/settings-icon-2048x2046-cw28eevx-1.png (1).png" alt="Settings">
-            </button>
-            <div class="drop-down">
-                <label for="volume">
-                    <img src="icons/unmute.button.png">
-                </label>
-                <input type="range" id="volume" name="volume" min="0" max="1" step="0.1">
+    <audio id="background-audio" autoplay loop src="music/C418 - Haggstrom - Minecraft Volume Alpha.mp3"></audio>
+    <div class="container">
+        <div class="container-top">
+            <div class="title-wrapper">
+                <div class="rps-title">Rock Paper Scissors</div>
+            </div>
+            <div class="settings">
+                <button>
+                    <img src="icons/settings-icon-2048x2046-cw28eevx-1.png (1).png" alt="Settings">
+                </button>
+                <div class="drop-down">
+                    <label for="volume">
+                        <img src="icons/unmute.button.png">
+                    </label>
+                    <input type="range" id="volume" name="volume" min="0" max="1" step="0.1">
+                </div>
             </div>
         </div>
-    </div>
-    <audio id="background-audio" autoplay loop src="music/C418 - Haggstrom - Minecraft Volume Alpha.mp3"></audio>
-    <div class = "container-1">
-        <div class = "rock-p">
-            <button>
-                <img src = icons/rocks.png.png>
-            </button>
+        <div class="container-1">
+            <div class = "rock-p">
+                <button>
+                    <img src = icons/rocks.png.png> 
+                </button>
+            </div>
+            <div class = "health">
+                <div class = "heart1">
+                    <img src = icons/heart.png>
+                </div>
+                <div class = "heart2">
+                    <img src = icons/heart.png>
+                </div>
+            </div>
         </div>
-        <div class = "health">
-            <div class = "heart1">
-                <img src = icons/heart.png>
-            </div> 
-            <div class = "heart2">
-                <img src = icons/heart.png>
-            </div> 
+        <div class="container-2">
+            <div class="paper-p">
+                <button>
+                    <img src="icons/paper.png">
+                </button>
+            </div>
+            <div class="p-choice">
+                <img src="icons/blank.png">
+            </div>
+            <div class="sign">0-0</div>
+            <div class="cpu-choice">
+                <img src="icons/blank.png">
+            </div>
+            <div class="steve">
+                <img src = "icons/herobrine.png">
+            </div>
+        </div>
+        <div class="container-3">
+            <div class="scissors-p">
+                <button>
+                    <img src = icons/final.scissors.png>
+                </button>
+            </div>
+        </div>
+        <div class="container-bottom">
+            <div class = "contact">contact:</div>
+            <div class = "email">Email : Shanvir0304@gmail.com</div>
+            <div class = "linked-in">LinkedIn :</div>
         </div>
     </div>
-    <div class = "container-2">
-        <div class = "paper-p">
-            <button>
-                <img src = icons/paper.png>
-            </button>
-        </div>
-        <div class = "p-choice"></div>
-        <div class = "sign">0-0</div>
-        <div class = "cpu-choice"></div>
-        <div class = "steve">
-            <img src = icons/herobrine.png>
-        </div>
-    </div>
-    <div class = "container-3">
-        <div class = "scissors-p">
-            <button>
-                <img src = icons/final.scissors.png>
-            </button>
-        </div>
-    </div>
-    <div class = "container-bottom">
-        <div class = "contact">contact:</div>
-        <div class = "email">Email : Shanvir0304@gmail.com</div>
-        <div class = "linked-in">LinkedIn :</div>
-    </div>
+    
 </body>
 </html>
