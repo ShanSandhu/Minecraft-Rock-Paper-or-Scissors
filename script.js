@@ -60,17 +60,48 @@ function playRound(humanChoice, computerChoice) {
     updateGameState();
 }
 
-function playGame(pChoice) {
+function playGame(pChoice, computerChoice) {
     if (sLife > 0 && pLife > 0) {
         let humanChoice = getHumanChoice(pChoice);
         let computerChoice = getComputerChoice();
+        
+        let pChoiceImg = document.querySelector('.p-choice img');
+        if (humanChoice === "Rock") {
+            pChoiceImg.src = "icons/rocks.png.png";
+        } else if (humanChoice === "Paper") {
+            pChoiceImg.src = "icons/paper.png";
+        } else if (humanChoice === "Scissors") {
+            pChoiceImg.src = "icons/final.scissors.png";
+        }
+
+        let computerChoiceImg = document.querySelector('.cpu-choice img');
+        if (computerChoice === "Rock") {
+            computerChoiceImg.src = "icons/rocks.png.png";
+        } else if (humanChoice === "Paper") {
+            computerChoiceImg.src = "icons/paper.png";
+        } else if (humanChoice === "Scissors") {
+            computerChoiceImg.src = "icons/final.scissors.png";
+        }
         
         playRound(humanChoice, computerChoice);
     }
 }
 
-function updateGameState() {
+function updateGameState(resultMessage) {
     console.log(`Player Life: ${pLife}, Steve Life: ${sLife}`);
+
+     
+    let signElement = document.querySelector('.sign');
+    signElement.textContent = `${resultMessage} | Player Life: ${pLife} - Steve Life: ${sLife}`;
+
+    if (sLife === 0) {
+        console.log("Congratulations! You won the game.");
+        setTimeout(restartGame, 2000);
+    } else if (pLife === 0) {
+        console.log("Game over! Steve won the game.");
+        setTimeout(restartGame, 2000);
+    }
+
     
     if (sLife === 0) {
         console.log("Congratulations! You won the game.");
@@ -79,4 +110,12 @@ function updateGameState() {
     }
 }
 
+function restartGame() {
+    pLife = 2;
+    sLife = 2;
+    console.log("Game restarted.");
 
+    document.querySelector('.p-choice img').src = "icons/blank.png";
+    document.querySelector('.cpu-choice img').src = "icons/blank.png";
+    document.querySelector('.sign').textContent = "Rock, Paper, or Scissors?";
+}
