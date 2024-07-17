@@ -6,116 +6,112 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.volume = event.target.value;
     });
 
-    document.getElementById('rock-button').addEventListener('click', () => playGame(0));
-    document.getElementById('paper-button').addEventListener('click', () => playGame(1));
-    document.getElementById('scissors-button').addEventListener('click', () => playGame(2));
-});
+   
 
-let pLife = 2;
-let sLife = 2;
-
-function getRandomChoice(max) {
+function randomInt (max) {
     return Math.floor(Math.random() * max);
-}
+  }
+  
+    let playerChoice;
+    let playerHP = 2;
+    let cpuHP = 2;
 
-function getComputerChoice() {
-    const choice = getRandomChoice(3);
-    if (choice === 0) return "Rock";
-    if (choice === 1) return "Paper";
-    if (choice === 2) return "Scissors";
-}
+    const rockButton = document.getElementById('rock-button');
+    const paperButton = document.getElementById('paper-button');
+    const scissorsButton = document.getElementById('scissors-button');
 
-function getHumanChoice(pChoice) {
-    if (pChoice === 0) return "Rock";
-    if (pChoice === 1) return "Paper";
-    if (pChoice === 2) return "Scissors";
-}
+    rockButton.addEventListener('click', () => {
+        playerChoice = 0;
+        game();
+    });
 
-function playRound(humanChoice, computerChoice) {
-    console.log(`You picked: ${humanChoice}`);
-    console.log(`CPU picked: ${computerChoice}`);
+    paperButton.addEventListener('click', () => {
+        playerChoice = 1;
+        game();
+    });
 
-    if (humanChoice === computerChoice) {
-        console.log("It's a DRAW");
-    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
-        console.log("Steve wins");
-        pLife -= 1;
-    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        console.log("You win");
-        sLife -= 1;
-    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        console.log("You win");
-        sLife -= 1;
-    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
-        console.log("Steve wins");
-        pLife -= 1;
-    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
-        console.log("Steve wins");
-        pLife -= 1;
-    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        console.log("You win");
-        sLife -= 1;
-    }
-
-    updateGameState();
-}
-
-function playGame(pChoice, computerChoice) {
-    if (sLife > 0 && pLife > 0) {
-        let humanChoice = getHumanChoice(pChoice);
-        let computerChoice = getComputerChoice();
-        
-        let pChoiceImg = document.querySelector('.p-choice img');
-        if (humanChoice === "Rock") {
-            pChoiceImg.src = "icons/rocks.png.png";
-        } else if (humanChoice === "Paper") {
-            pChoiceImg.src = "icons/paper.png";
-        } else if (humanChoice === "Scissors") {
-            pChoiceImg.src = "icons/final.scissors.png";
-        }
-
-        let computerChoiceImg = document.querySelector('.cpu-choice img');
-        if (computerChoice === "Rock") {
-            computerChoiceImg.src = "icons/rocks.png.png";
-        } else if (humanChoice === "Paper") {
-            computerChoiceImg.src = "icons/paper.png";
-        } else if (humanChoice === "Scissors") {
-            computerChoiceImg.src = "icons/final.scissors.png";
-        }
-        
-        playRound(humanChoice, computerChoice);
-    }
-}
-
-function updateGameState(resultMessage) {
-    console.log(`Player Life: ${pLife}, Steve Life: ${sLife}`);
-
-     
-    let signElement = document.querySelector('.sign');
-    signElement.textContent = `${resultMessage} | Player Life: ${pLife} - Steve Life: ${sLife}`;
-
-    if (sLife === 0) {
-        console.log("Congratulations! You won the game.");
-        setTimeout(restartGame, 2000);
-    } else if (pLife === 0) {
-        console.log("Game over! Steve won the game.");
-        setTimeout(restartGame, 2000);
-    }
-
+    scissorsButton.addEventListener('click', () => {
+        playerChoice = 2;
+        game();
+    });
     
-    if (sLife === 0) {
-        console.log("Congratulations! You won the game.");
-    } else if (pLife === 0) {
-        console.log("Game over! Steve won the game.");
+
+    function game () {
+
+        if (playerHP <= 0 || cpuHP <= 0){
+          console.log ("Game is over!")
+          console.log ("Resetting.....")
+          reset();
+          return;
+        } 
+
+        let cpuChoice = (randomInt(3));
+        let result;
+
+
+        if (playerChoice === 0){
+          console.log("You picked Rock!");
+        } else if (playerChoice === 1){
+          console.log("You picked Paper!");
+        } else if (playerChoice === 2){
+          console.log("You picked Scissors!");
+        } else {
+          console.log("Invalid result");
+        }
+
+        if (cpuChoice === 0){
+          console.log("CPU picked Rock!");
+        } else if (cpuChoice === 1){
+          console.log("CPU picked Paper!");
+        } else if (cpuChoice === 2){
+          console.log("CPU picked Scissors!");
+        } 
+        
+        if (playerChoice === 0 && cpuChoice === 0) {
+        result = ("Draw");
+      } else if (playerChoice === 1 && cpuChoice === 1) {
+        result = ("Draw");
+      } else if (playerChoice === 2 && cpuChoice === 2) {
+        result = ("Draw");
+      } else if (playerChoice === 0 && cpuChoice === 1) {
+        playerHP -= 1;
+        result = ("CPU wins this round!")
+      } else if (playerChoice === 0 && cpuChoice === 2) {
+        cpuHP -= 1;
+        result = ("You win this round!")
+      } else if (playerChoice === 1 && cpuChoice === 0) {
+        cpuHP -= 1;
+        result = ("You win this round!")
+      } else if (playerChoice === 1 && cpuChoice === 2) {
+        playerHP -= 1;
+        result = ("CPU wins this round!")
+      } else if (playerChoice === 2 && cpuChoice === 0) {
+        playerHP -= 1;
+        result = ("CPU wins this round!")
+      } else if (playerChoice === 2 && cpuChoice === 1) {
+        cpuHP -= 1;
+        result = ("You win this round!")
+      } else {
+        result = ("Invalid input")
+      }
+
+      console.log(result);
+      console.log(`Player HP: ${playerHP}, CPU HP: ${cpuHP}`)
+
+      if (playerHP <= 0){
+        console.log("CPU wins the game!")
+        game();
+      } else if (cpuHP <= 0){
+        console.log("You win!!")
+        game();
+      }
+  }
+    
+   function reset () {
+      playerHP = 2;
+      cpuHP = 2;
+      console.log("Play again!");
     }
-}
-
-function restartGame() {
-    pLife = 2;
-    sLife = 2;
-    console.log("Game restarted.");
-
-    document.querySelector('.p-choice img').src = "icons/blank.png";
-    document.querySelector('.cpu-choice img').src = "icons/blank.png";
-    document.querySelector('.sign').textContent = "Rock, Paper, or Scissors?";
-}
+      
+  game();
+});
